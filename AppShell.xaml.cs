@@ -7,6 +7,7 @@ public partial class AppShell : Shell
         InitializeComponent();
 
         Routing.RegisterRoute(nameof(ChatPage), typeof(ChatPage));
+        Routing.RegisterRoute(nameof(CallPage), typeof(CallPage));
         Routing.RegisterRoute(nameof(TeamsPage), typeof(TeamsPage));
         Routing.RegisterRoute(nameof(CalendarPage), typeof(CalendarPage));
         Routing.RegisterRoute(nameof(MorePage), typeof(MorePage));

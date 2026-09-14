@@ -49,11 +49,13 @@
             </VerticalStackLayout>
 
             <!-- More -->
-            <Label
-                Grid.Column="3"
-                Text="•••"
-                FontSize="22"
-                VerticalOptions="Center" />
+            <Button Grid.Column="3"
+        Text="📞"
+        FontSize="20"
+        WidthRequest="45"
+        HeightRequest="45"
+        Padding="0"
+        Clicked="OnCallClicked" />
 
         </Grid>
 

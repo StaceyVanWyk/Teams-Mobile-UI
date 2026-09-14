@@ -21,4 +21,8 @@ public partial class ChatPage : ContentPage
             BindingContext = this;
         }
     }
+        private async void OnCallClicked(object? sender, EventArgs e)
+    {
+        await Shell.Current.GoToAsync(nameof(CallPage));
+    }
 }
