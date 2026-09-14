@@ -7,6 +7,7 @@
             InitializeComponent();
             Routing.RegisterRoute(nameof(ChatPage), typeof(ChatPage));
             Routing.RegisterRoute(nameof(TeamsPage), typeof(TeamsPage));
+            Routing.RegisterRoute(nameof(CalendarPage), typeof(CalendarPage));
         }
     }
 }

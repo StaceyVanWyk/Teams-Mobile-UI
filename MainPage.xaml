@@ -212,6 +212,11 @@
                 Grid.Column="3"
                 HorizontalOptions="Center">
 
+                <VerticalStackLayout.GestureRecognizers>
+                    <TapGestureRecognizer
+                        Tapped="OnCalendarTapped" />
+                </VerticalStackLayout.GestureRecognizers>
+
                 <Label
                     Text="📅"
                     FontSize="22"

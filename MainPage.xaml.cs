@@ -136,7 +136,6 @@ namespace TeamsMobileUI
             }
         };
 
-
         private async void OnChatTapped(object sender, EventArgs e)
         {
             if (sender is Grid grid && grid.BindingContext is Chat chat)
@@ -148,6 +147,11 @@ namespace TeamsMobileUI
                         { "Chat", chat }
                     });
             }
+        }
+
+        private async void OnTeamsTapped(object sender, EventArgs e)
+        {
+            await Shell.Current.GoToAsync(nameof(TeamsPage));
         }
     }
 }

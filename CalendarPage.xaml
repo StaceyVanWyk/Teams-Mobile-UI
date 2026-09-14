@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TeamsMobileUI.CalendarPage"
+             Title="Calendar">
+
+    <Grid RowDefinitions="Auto,*">
+
+        <!-- Header -->
+        <Grid
+            Grid.Row="0"
+            Padding="20"
+            ColumnDefinitions="Auto,*,Auto">
+
+            <Label
+                Text="☰"
+                FontSize="28"
+                VerticalOptions="Center" />
+
+            <Label
+                Grid.Column="1"
+                Text="Calendar"
+                FontSize="24"
+                FontAttributes="Bold"
+                HorizontalOptions="Center"
+                VerticalOptions="Center" />
+
+            <Label
+                Grid.Column="2"
+                Text="+"
+                FontSize="28"
+                VerticalOptions="Center" />
+
+        </Grid>
+
+        <!-- Calendar Content -->
+        <ScrollView Grid.Row="1">
+
+            <VerticalStackLayout
+                Padding="20"
+                Spacing="20">
+
+                <!-- Month -->
+                <Grid
+                    ColumnDefinitions="Auto,*,Auto">
+
+                    <Button
+                        Text="‹"
+                        FontSize="25"
+                        WidthRequest="45"
+                        HeightRequest="45"
+                        Padding="0" />
+
+                    <Label
+                        Grid.Column="1"
+                        Text="September 2026"
+                        FontSize="20"
+                        FontAttributes="Bold"
+                        HorizontalTextAlignment="Center"
+                        VerticalTextAlignment="Center" />
+
+                    <Button
+                        Grid.Column="2"
+                        Text="›"
+                        FontSize="25"
+                        WidthRequest="45"
+                        HeightRequest="45"
+                        Padding="0" />
+
+                </Grid>
+
+                <!-- Week Days -->
+                <Grid
+                    ColumnDefinitions="*,*,*,*,*,*,*">
+
+                    <Label
+                        Text="S"
+                        HorizontalTextAlignment="Center"
+                        FontAttributes="Bold" />
+
+                    <Label
+                        Grid.Column="1"
+                        Text="M"
+                        HorizontalTextAlignment="Center"
+                        FontAttributes="Bold" />
+
+                    <Label
+                        Grid.Column="2"
+                        Text="T"
+                        HorizontalTextAlignment="Center"
+                        FontAttributes="Bold" />
+
+                    <Label
+                        Grid.Column="3"
+                        Text="W"
+                        HorizontalTextAlignment="Center"
+                        FontAttributes="Bold" />
+
+                    <Label
+                        Grid.Column="4"
+                        Text="T"
+                        HorizontalTextAlignment="Center"
+                        FontAttributes="Bold" />
+
+                    <Label
+                        Grid.Column="5"
+                        Text="F"
+                        HorizontalTextAlignment="Center"
+                        FontAttributes="Bold" />
+
+                    <Label
+                        Grid.Column="6"
+                        Text="S"
+                        HorizontalTextAlignment="Center"
+                        FontAttributes="Bold" />
+
+                </Grid>
+
+                <!-- Calendar Days -->
+                <Grid
+                    RowDefinitions="*,*,*,*,*"
+                    ColumnDefinitions="*,*,*,*,*,*,*"
+                    RowSpacing="12"
+                    ColumnSpacing="5">
+
+                    <Label Grid.Row="0" Grid.Column="2"
+                           Text="1"
+                           HorizontalTextAlignment="Center" />
+
+                    <Label Grid.Row="0" Grid.Column="3"
+                           Text="2"
+                           HorizontalTextAlignment="Center" />
+
+                    <Label Grid.Row="0" Grid.Column="4"
+                           Text="3"
+                           HorizontalTextAlignment="Center" />
+
+                    <Label Grid.Row="0" Grid.Column="5"
+                           Text="4"
+                           HorizontalTextAlignment="Center" />
+
+                    <Label Grid.Row="0" Grid.Column="6"
+                           Text="5"
+                           HorizontalTextAlignment="Center" />
+
+                    <Label Grid.Row="1" Grid.Column="0"
+                           Text="6"
+                           HorizontalTextAlignment="Center" />
+
+                    <Label Grid.Row="1" Grid.Column="1"
+                           Text="7"
+                           HorizontalTextAlignment="Center" />
+
+                    <Label Grid.Row="1" Grid.Column="2"
+                           Text="8"
+                           HorizontalTextAlignment="Center" />
+
+                    <Label Grid.Row="1" Grid.Column="3"
+                           Text="9"
+                           HorizontalTextAlignment="Center" />
+
+                    <Label Grid.Row="1" Grid.Column="4"
+                           Text="10"
+                           HorizontalTextAlignment="Center" />
+
+                    <Label Grid.Row="1" Grid.Column="5"
+                           Text="11"
+                           HorizontalTextAlignment="Center" />
+
+                    <Label Grid.Row="1" Grid.Column="6"
+                           Text="12"
+                           HorizontalTextAlignment="Center" />
+
+                    <Label Grid.Row="2" Grid.Column="0"
+                           Text="13"
+                           HorizontalTextAlignment="Center" />
+
+                    <Label Grid.Row="2" Grid.Column="1"
+                           Text="14"
+                           HorizontalTextAlignment="Center" />
+
+                    <Label Grid.Row="2" Grid.Column="2"
+                           Text="15"
+                           HorizontalTextAlignment="Center" />
+
+                    <Label Grid.Row="2" Grid.Column="3"
+                           Text="16"
+                           HorizontalTextAlignment="Center" />
+
+                    <Label Grid.Row="2" Grid.Column="4"
+                           Text="17"
+                           HorizontalTextAlignment="Center" />
+
+                    <Label Grid.Row="2" Grid.Column="5"
+                           Text="18"
+                           HorizontalTextAlignment="Center" />
+
+                    <Label Grid.Row="2" Grid.Column="6"
+                           Text="19"
+                           HorizontalTextAlignment="Center" />
+
+                    <Label Grid.Row="3" Grid.Column="0"
+                           Text="20"
+                           HorizontalTextAlignment="Center" />
+
+                    <Label Grid.Row="3" Grid.Column="1"
+                           Text="21"
+                           HorizontalTextAlignment="Center" />
+
+                    <Label Grid.Row="3" Grid.Column="2"
+                           Text="22"
+                           HorizontalTextAlignment="Center" />
+
+                    <Label Grid.Row="3" Grid.Column="3"
+                           Text="23"
+                           HorizontalTextAlignment="Center" />
+
+                    <Label Grid.Row="3" Grid.Column="4"
+                           Text="24"
+                           HorizontalTextAlignment="Center" />
+
+                    <Label Grid.Row="3" Grid.Column="5"
+                           Text="25"
+                           HorizontalTextAlignment="Center" />
+
+                    <Label Grid.Row="3" Grid.Column="6"
+                           Text="26"
+                           HorizontalTextAlignment="Center" />
+
+                    <Label Grid.Row="4" Grid.Column="0"
+                           Text="27"
+                           HorizontalTextAlignment="Center" />
+
+                    <Label Grid.Row="4" Grid.Column="1"
+                           Text="28"
+                           HorizontalTextAlignment="Center" />
+
+                    <Label Grid.Row="4" Grid.Column="2"
+                           Text="29"
+                           HorizontalTextAlignment="Center" />
+
+                    <Label Grid.Row="4" Grid.Column="3"
+                           Text="30"
+                           HorizontalTextAlignment="Center" />
+
+                </Grid>
+
+                <!-- Upcoming Events -->
+                <Label
+                    Text="Upcoming"
+                    FontSize="20"
+                    FontAttributes="Bold"
+                    Margin="0,10,0,0" />
+
+                <Border
+                    Padding="15"
+                    BackgroundColor="#F5F5F5"
+                    StrokeThickness="0">
+
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="12" />
+                    </Border.StrokeShape>
+
+                    <VerticalStackLayout Spacing="5">
+
+                        <Label
+                            Text="Team Meeting"
+                            FontSize="17"
+                            FontAttributes="Bold" />
+
+                        <Label
+                            Text="10:00 AM"
+                            FontSize="14"
+                            TextColor="Gray" />
+
+                        <Label
+                            Text="Development Team"
+                            FontSize="13"
+                            TextColor="Gray" />
+
+                    </VerticalStackLayout>
+
+                </Border>
+
+                <Border
+                    Padding="15"
+                    BackgroundColor="#F5F5F5"
+                    StrokeThickness="0">
+
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="12" />
+                    </Border.StrokeShape>
+
+                    <VerticalStackLayout Spacing="5">
+
+                        <Label
+                            Text="College Project"
+                            FontSize="17"
+                            FontAttributes="Bold" />
+
+                        <Label
+                            Text="2:00 PM"
+                            FontSize="14"
+                            TextColor="Gray" />
+
+                        <Label
+                            Text="Assignment discussion"
+                            FontSize="13"
+                            TextColor="Gray" />
+
+                    </VerticalStackLayout>
+
+                </Border>
+
+            </VerticalStackLayout>
+
+        </ScrollView>
+
+    </Grid>
+
+</ContentPage>
