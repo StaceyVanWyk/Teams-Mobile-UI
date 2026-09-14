@@ -4,7 +4,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="TeamsMobileUI.MainPage">
 
-    <Grid RowDefinitions="Auto,*">
+    <Grid RowDefinitions="Auto,*,Auto">
 
         <!-- Header -->
         <Grid Grid.Row="0"
@@ -32,6 +32,7 @@
 
         </Grid>
 
+
         <!-- Main Content -->
         <ScrollView Grid.Row="1">
 
@@ -49,12 +50,29 @@
                     Placeholder="Search"
                     HeightRequest="50" />
 
-                <!-- Chats Heading -->
-                <Label
-                    Text="Chats"
-                    FontSize="20"
-                    FontAttributes="Bold"
-                    Margin="0,10,0,0" />
+
+                <!-- Chats Heading and New Chat Button -->
+                <Grid
+                    ColumnDefinitions="*,Auto"
+                    Margin="0,10,0,0">
+
+                    <Label
+                        Text="Chats"
+                        FontSize="20"
+                        FontAttributes="Bold"
+                        VerticalOptions="Center" />
+
+                    <Button
+                        Grid.Column="1"
+                        Text="+"
+                        FontSize="22"
+                        WidthRequest="45"
+                        HeightRequest="45"
+                        CornerRadius="23"
+                        Padding="0" />
+
+                </Grid>
+
 
                 <!-- Chat List -->
                 <CollectionView
@@ -66,7 +84,7 @@
                         <DataTemplate>
 
                             <Grid
-                                Padding="10"
+                                Padding="10,12"
                                 ColumnDefinitions="60,*,Auto"
                                 RowDefinitions="Auto,Auto">
 
@@ -119,6 +137,107 @@
             </VerticalStackLayout>
 
         </ScrollView>
+
+
+        <!-- Bottom Navigation -->
+        <Grid
+            Grid.Row="2"
+            Padding="10,8"
+            ColumnDefinitions="*,*,*,*,*">
+
+            <!-- Activity -->
+            <VerticalStackLayout
+                Grid.Column="0"
+                HorizontalOptions="Center">
+
+                <Label
+                    Text="⌂"
+                    FontSize="22"
+                    HorizontalTextAlignment="Center" />
+
+                <Label
+                    Text="Activity"
+                    FontSize="11"
+                    HorizontalTextAlignment="Center" />
+
+            </VerticalStackLayout>
+
+
+            <!-- Chat -->
+            <VerticalStackLayout
+                Grid.Column="1"
+                HorizontalOptions="Center">
+
+                <Label
+                    Text="💬"
+                    FontSize="22"
+                    TextColor="#5B3A9D"
+                    HorizontalTextAlignment="Center" />
+
+                <Label
+                    Text="Chat"
+                    FontSize="11"
+                    FontAttributes="Bold"
+                    TextColor="#5B3A9D"
+                    HorizontalTextAlignment="Center" />
+
+            </VerticalStackLayout>
+
+
+            <!-- Teams -->
+            <VerticalStackLayout
+                Grid.Column="2"
+                HorizontalOptions="Center">
+
+                <Label
+                    Text="👥"
+                    FontSize="22"
+                    HorizontalTextAlignment="Center" />
+
+                <Label
+                    Text="Teams"
+                    FontSize="11"
+                    HorizontalTextAlignment="Center" />
+
+            </VerticalStackLayout>
+
+
+            <!-- Calendar -->
+            <VerticalStackLayout
+                Grid.Column="3"
+                HorizontalOptions="Center">
+
+                <Label
+                    Text="📅"
+                    FontSize="22"
+                    HorizontalTextAlignment="Center" />
+
+                <Label
+                    Text="Calendar"
+                    FontSize="11"
+                    HorizontalTextAlignment="Center" />
+
+            </VerticalStackLayout>
+
+
+            <!-- More -->
+            <VerticalStackLayout
+                Grid.Column="4"
+                HorizontalOptions="Center">
+
+                <Label
+                    Text="•••"
+                    FontSize="22"
+                    HorizontalTextAlignment="Center" />
+
+                <Label
+                    Text="More"
+                    FontSize="11"
+                    HorizontalTextAlignment="Center" />
+
+            </VerticalStackLayout>
+
+        </Grid>
 
     </Grid>
 
