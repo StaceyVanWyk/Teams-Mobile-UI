@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TeamsMobileUI.TeamsPage"
+             Title="Teams">
+
+    <Grid RowDefinitions="Auto,*">
+
+        <!-- Header -->
+        <Grid
+            Grid.Row="0"
+            Padding="20"
+            ColumnDefinitions="Auto,*,Auto">
+
+            <Label
+                Text="☰"
+                FontSize="28"
+                VerticalOptions="Center" />
+
+            <Label
+                Grid.Column="1"
+                Text="Teams"
+                FontSize="24"
+                FontAttributes="Bold"
+                HorizontalOptions="Center"
+                VerticalOptions="Center" />
+
+            <Label
+                Grid.Column="2"
+                Text="🔍"
+                FontSize="22"
+                VerticalOptions="Center" />
+
+        </Grid>
+
+
+        <!-- Teams Content -->
+        <ScrollView Grid.Row="1">
+
+            <VerticalStackLayout
+                Padding="20"
+                Spacing="15">
+
+                <!-- Page Heading -->
+                <Label
+                    Text="Your teams"
+                    FontSize="22"
+                    FontAttributes="Bold" />
+
+                <Label
+                    Text="Teams and channels"
+                    FontSize="14"
+                    TextColor="Gray" />
+
+
+                <!-- Team List -->
+                <CollectionView
+                    ItemsSource="{Binding Teams}"
+                    SelectionMode="None">
+
+                    <CollectionView.ItemTemplate>
+
+                        <DataTemplate>
+
+                            <Border
+                                Padding="15"
+                                Margin="0,5"
+                                BackgroundColor="#F5F5F5"
+                                StrokeThickness="0">
+
+                                <Border.StrokeShape>
+                                    <RoundRectangle CornerRadius="12" />
+                                </Border.StrokeShape>
+
+                                <Grid
+                                    ColumnDefinitions="55,*,Auto">
+
+                                    <!-- Team Icon -->
+                                    <Border
+                                        WidthRequest="45"
+                                        HeightRequest="45"
+                                        BackgroundColor="#5B3A9D"
+                                        StrokeThickness="0"
+                                        VerticalOptions="Center">
+
+                                        <Border.StrokeShape>
+                                            <RoundRectangle CornerRadius="10" />
+                                        </Border.StrokeShape>
+
+                                        <Label
+                                            Text="👥"
+                                            FontSize="22"
+                                            HorizontalTextAlignment="Center"
+                                            VerticalTextAlignment="Center" />
+
+                                    </Border>
+
+
+                                    <!-- Team Information -->
+                                    <VerticalStackLayout
+                                        Grid.Column="1"
+                                        VerticalOptions="Center"
+                                        Spacing="2">
+
+                                        <Label
+                                            Text="{Binding Name}"
+                                            FontSize="17"
+                                            FontAttributes="Bold" />
+
+                                        <Label
+                                            Text="{Binding Description}"
+                                            FontSize="13"
+                                            TextColor="Gray" />
+
+                                    </VerticalStackLayout>
+
+
+                                    <!-- Arrow -->
+                                    <Label
+                                        Grid.Column="2"
+                                        Text="›"
+                                        FontSize="28"
+                                        TextColor="Gray"
+                                        VerticalOptions="Center" />
+
+                                </Grid>
+
+                            </Border>
+
+                        </DataTemplate>
+
+                    </CollectionView.ItemTemplate>
+
+                </CollectionView>
+
+            </VerticalStackLayout>
+
+        </ScrollView>
+
+    </Grid>
+
+</ContentPage>

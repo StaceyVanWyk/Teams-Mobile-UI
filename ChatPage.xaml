@@ -3,7 +3,7 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="TeamsMobileUI.ChatPage"
-             Title="Chat">
+             Title="{Binding Chat.Name}">
 
     <Grid RowDefinitions="Auto,*,Auto">
 
@@ -24,20 +24,20 @@
             <!-- Profile Picture -->
             <Image
                 Grid.Column="1"
-                Source="sarah.jpg"
+                Source="{Binding Chat.Image}"
                 HeightRequest="45"
                 WidthRequest="45"
                 Aspect="AspectFill"
                 Margin="5,0" />
 
-            <!-- Name -->
+            <!-- Name and Status -->
             <VerticalStackLayout
                 Grid.Column="2"
                 VerticalOptions="Center"
                 Margin="8,0">
 
                 <Label
-                    Text="Stacey"
+                    Text="{Binding Chat.Name}"
                     FontSize="17"
                     FontAttributes="Bold" />
 
@@ -59,106 +59,62 @@
 
 
         <!-- Messages -->
-        <ScrollView Grid.Row="1">
+        <CollectionView
+            Grid.Row="1"
+            ItemsSource="{Binding Chat.Messages}"
+            SelectionMode="None">
 
-            <VerticalStackLayout
-                Padding="15"
-                Spacing="12">
+            <CollectionView.ItemTemplate>
 
-                <!-- Stacey's message -->
-                <HorizontalStackLayout
-                    HorizontalOptions="Start">
+                <DataTemplate>
 
-                    <Border
-                        BackgroundColor="#F1F1F1"
-                        StrokeThickness="0"
-                        Padding="12"
-                        MaximumWidthRequest="280">
+                    <Grid Padding="10,6">
 
-                        <Border.StrokeShape>
-                            <RoundRectangle CornerRadius="15" />
-                        </Border.StrokeShape>
+                        <!-- Message Bubble -->
+                        <Border
+                            Padding="12"
+                            MaximumWidthRequest="280"
+                            HorizontalOptions="Start"
+                            BackgroundColor="#F1F1F1"
+                            StrokeThickness="0">
 
-                        <Label
-                            Text="Hi! Did you get the document I sent?"
-                            FontSize="15" />
+                            <Border.StrokeShape>
+                                <RoundRectangle CornerRadius="15" />
+                            </Border.StrokeShape>
 
-                    </Border>
+                            <Label
+                                Text="{Binding Text}"
+                                FontSize="15" />
 
-                </HorizontalStackLayout>
+                            <Border.Triggers>
 
+                                <!-- My message -->
+                                <DataTrigger
+                                    TargetType="Border"
+                                    Binding="{Binding IsMine}"
+                                    Value="True">
 
-                <!-- Your message -->
-                <HorizontalStackLayout
-                    HorizontalOptions="End">
+                                    <Setter
+                                        Property="HorizontalOptions"
+                                        Value="End" />
 
-                    <Border
-                        BackgroundColor="#E8DDF5"
-                        StrokeThickness="0"
-                        Padding="12"
-                        MaximumWidthRequest="280">
+                                    <Setter
+                                        Property="BackgroundColor"
+                                        Value="#E8DDF5" />
 
-                        <Border.StrokeShape>
-                            <RoundRectangle CornerRadius="15" />
-                        </Border.StrokeShape>
+                                </DataTrigger>
 
-                        <Label
-                            Text="Yes, I received it. Thank you!"
-                            FontSize="15" />
+                            </Border.Triggers>
 
-                    </Border>
+                        </Border>
 
-                </HorizontalStackLayout>
+                    </Grid>
 
+                </DataTemplate>
 
-                <!-- Stacey's message -->
-                <HorizontalStackLayout
-                    HorizontalOptions="Start">
+            </CollectionView.ItemTemplate>
 
-                    <Border
-                        BackgroundColor="#F1F1F1"
-                        StrokeThickness="0"
-                        Padding="12"
-                        MaximumWidthRequest="280">
-
-                        <Border.StrokeShape>
-                            <RoundRectangle CornerRadius="15" />
-                        </Border.StrokeShape>
-
-                        <Label
-                            Text="Great! Let me know if you have any questions."
-                            FontSize="15" />
-
-                    </Border>
-
-                </HorizontalStackLayout>
-
-
-                <!-- Your message -->
-                <HorizontalStackLayout
-                    HorizontalOptions="End">
-
-                    <Border
-                        BackgroundColor="#E8DDF5"
-                        StrokeThickness="0"
-                        Padding="12"
-                        MaximumWidthRequest="280">
-
-                        <Border.StrokeShape>
-                            <RoundRectangle CornerRadius="15" />
-                        </Border.StrokeShape>
-
-                        <Label
-                            Text="Will do 👍"
-                            FontSize="15" />
-
-                    </Border>
-
-                </HorizontalStackLayout>
-
-            </VerticalStackLayout>
-
-        </ScrollView>
+        </CollectionView>
 
 
         <!-- Message Input -->

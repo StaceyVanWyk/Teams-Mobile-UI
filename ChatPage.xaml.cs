@@ -1,9 +1,24 @@
+using TeamsMobileUI.Models;
+
 namespace TeamsMobileUI;
 
+[QueryProperty(nameof(Chat), "Chat")]
 public partial class ChatPage : ContentPage
 {
-	public ChatPage()
-	{
-		InitializeComponent();
-	}
+    private Chat _chat;
+
+    public ChatPage()
+    {
+        InitializeComponent();
+    }
+
+    public Chat Chat
+    {
+        get => _chat;
+        set
+        {
+            _chat = value;
+            BindingContext = this;
+        }
+    }
 }

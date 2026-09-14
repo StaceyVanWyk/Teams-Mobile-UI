@@ -7,9 +7,10 @@
     <Grid RowDefinitions="Auto,*,Auto">
 
         <!-- Header -->
-        <Grid Grid.Row="0"
-              Padding="20"
-              ColumnDefinitions="Auto,*,Auto">
+        <Grid
+            Grid.Row="0"
+            Padding="20"
+            ColumnDefinitions="Auto,*,Auto">
 
             <Label
                 Text="☰"
@@ -32,7 +33,6 @@
 
         </Grid>
 
-
         <!-- Main Content -->
         <ScrollView Grid.Row="1">
 
@@ -49,7 +49,6 @@
                 <Entry
                     Placeholder="Search"
                     HeightRequest="50" />
-
 
                 <!-- Chats Heading and New Chat Button -->
                 <Grid
@@ -73,7 +72,6 @@
 
                 </Grid>
 
-
                 <!-- Chat List -->
                 <CollectionView
                     ItemsSource="{Binding Chats}"
@@ -87,6 +85,12 @@
                                 Padding="10,12"
                                 ColumnDefinitions="60,*,Auto"
                                 RowDefinitions="Auto,Auto">
+
+                                <!-- Make chat clickable -->
+                                <Grid.GestureRecognizers>
+                                    <TapGestureRecognizer
+                                        Tapped="OnChatTapped" />
+                                </Grid.GestureRecognizers>
 
                                 <!-- Profile Image -->
                                 <Image
@@ -138,7 +142,6 @@
 
         </ScrollView>
 
-
         <!-- Bottom Navigation -->
         <Grid
             Grid.Row="2"
@@ -162,7 +165,6 @@
 
             </VerticalStackLayout>
 
-
             <!-- Chat -->
             <VerticalStackLayout
                 Grid.Column="1"
@@ -183,11 +185,15 @@
 
             </VerticalStackLayout>
 
-
             <!-- Teams -->
             <VerticalStackLayout
                 Grid.Column="2"
                 HorizontalOptions="Center">
+
+                <VerticalStackLayout.GestureRecognizers>
+                    <TapGestureRecognizer
+                        Tapped="OnTeamsTapped" />
+                </VerticalStackLayout.GestureRecognizers>
 
                 <Label
                     Text="👥"
@@ -200,7 +206,6 @@
                     HorizontalTextAlignment="Center" />
 
             </VerticalStackLayout>
-
 
             <!-- Calendar -->
             <VerticalStackLayout
@@ -218,7 +223,6 @@
                     HorizontalTextAlignment="Center" />
 
             </VerticalStackLayout>
-
 
             <!-- More -->
             <VerticalStackLayout
