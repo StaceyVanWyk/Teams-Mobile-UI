@@ -1,24 +1,48 @@
-﻿namespace TeamsMobileUI
+﻿using TeamsMobileUI.Models;
+
+namespace TeamsMobileUI
 {
     public partial class MainPage : ContentPage
     {
-        int count = 0;
-
         public MainPage()
         {
             InitializeComponent();
+            BindingContext = this;
         }
 
-        //private void OnCounterClicked(object? sender, EventArgs e)
-        //{
-        //    count++;
+        public List<Chat> Chats { get; set; } = new()
+        {
+            new Chat
+            {
+                Name = "Stacey",
+                Message = "Moring, did the meeting start?",
+                Time = "09:15",
+                Image = "sarah.jpg"
+            },
 
-        //    if (count == 1)
-        //        CounterBtn.Text = $"Clicked {count} time";
-        //    else
-        //        CounterBtn.Text = $"Clicked {count} times";
+            new Chat
+            {
+                Name = "John",
+                Message = "I'll sent the document",
+                Time = "08:00",
+                Image = "john.jpg"
+            },
 
-        //    SemanticScreenReader.Announce(CounterBtn.Text);
-        //}
+            new Chat
+            {
+                Name = "Lisa",
+                Message = "Thanks!",
+                Time = "Yesterday",
+                Image = "lisa.jpg"
+            },
+
+            new Chat
+            {
+                Name = "Michael",
+                Message = "See you tomorrow.",
+                Time = "Yesterday",
+                Image = "michael.jpg"
+            }
+        };
     }
 }

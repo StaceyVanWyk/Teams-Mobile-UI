@@ -1,15 +1,15 @@
-﻿using System;
+﻿
 
-public class Class1
+
+namespace TeamsMobileUI.Models;
+
+public class Chat
 {
-	public Class1()
-	{
-		public string Name { get; set; 
-		public string Message { get; set;  }
-	    public string Time { get; set; }
-	    pubice string Image { get; set;  }
-	   
-	 
-	}
-	}
+    public string Name { get; set; }
+
+    public string Message { get; set; }
+
+    public string Time { get; set; }
+
+    public string Image { get; set; }
 }
