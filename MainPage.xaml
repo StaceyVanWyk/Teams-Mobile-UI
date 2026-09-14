@@ -1,89 +1,125 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
+
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="TeamsMobileUI.MainPage">
-<!-- Adding a  grid for rows and colums-->
+
     <Grid RowDefinitions="Auto,*">
-        <!-- Header-->
+
+        <!-- Header -->
         <Grid Grid.Row="0"
-          Padding="20"  
-          ColumnDefinitions="Auto,*,Auto">
+              Padding="20"
+              ColumnDefinitions="Auto,*,Auto">
 
             <Label
                 Text="☰"
                 FontSize="28"
-                VerticalOptions="Center"
-                
-            />
+                VerticalOptions="Center" />
+
             <Label
                 Grid.Column="1"
                 Text="Teams"
                 FontSize="24"
                 FontAttributes="Bold"
-                VerticalOptions="Center"
                 HorizontalOptions="Center"
-                />
+                VerticalOptions="Center" />
+
             <Label
                 Grid.Column="2"
                 Text="👤"
                 FontSize="24"
-                VerticalOptions="Center"
-               />
+                VerticalOptions="Center" />
 
         </Grid>
-        
-        <!-- Main Content-->
-        <ScrollView Grid.Row="1">
-            <VerticalStackLayout Padding="20"
-              Spacing="20">
 
+        <!-- Main Content -->
+        <ScrollView Grid.Row="1">
+
+            <VerticalStackLayout
+                Padding="20"
+                Spacing="15">
+
+                <!-- Search -->
                 <Label
                     Text="Search"
                     FontSize="20"
-                    FontAttributes="Bold"
-                    
-                    />
+                    FontAttributes="Bold" />
 
                 <Entry
                     Placeholder="Search"
-                    HeightRequest="50"
-                    
-                    />
+                    HeightRequest="50" />
 
+                <!-- Chats Heading -->
                 <Label
                     Text="Chats"
                     FontSize="20"
                     FontAttributes="Bold"
-                    
-                    />
-                <CollectionView>
-                    <CollectionView.ItemsSource>
-                        <x:Array Type="{x:Type x:String}">
-                            <x:String>Stacey - Hey, are we still meeting</x:String>
-                            <x:String>Sam - I'll send the document</x:String>
-                            <x:String>Leah = Thanks!</x:String>
-                            <x:String>Wilfred - See you tommorow</x:String>
-                        </x:Array>
-                        
-                    </CollectionView.ItemsSource>
+                    Margin="0,10,0,0" />
+
+                <!-- Chat List -->
+                <CollectionView
+                    ItemsSource="{Binding Chats}"
+                    SelectionMode="None">
 
                     <CollectionView.ItemTemplate>
+
                         <DataTemplate>
-                            <Label
-                                Text="{Binding}"
-                                FontSize="16"
+
+                            <Grid
                                 Padding="10"
-             />
+                                ColumnDefinitions="60,*,Auto"
+                                RowDefinitions="Auto,Auto">
+
+                                <!-- Profile Image -->
+                                <Image
+                                    Grid.RowSpan="2"
+                                    Grid.Column="0"
+                                    Source="{Binding Image}"
+                                    HeightRequest="50"
+                                    WidthRequest="50"
+                                    Aspect="AspectFill"
+                                    VerticalOptions="Center" />
+
+                                <!-- Name -->
+                                <Label
+                                    Grid.Row="0"
+                                    Grid.Column="1"
+                                    Text="{Binding Name}"
+                                    FontSize="17"
+                                    FontAttributes="Bold"
+                                    VerticalOptions="End" />
+
+                                <!-- Message -->
+                                <Label
+                                    Grid.Row="1"
+                                    Grid.Column="1"
+                                    Text="{Binding Message}"
+                                    FontSize="14"
+                                    TextColor="Gray"
+                                    LineBreakMode="TailTruncation"
+                                    VerticalOptions="Start" />
+
+                                <!-- Time -->
+                                <Label
+                                    Grid.Row="0"
+                                    Grid.Column="2"
+                                    Text="{Binding Time}"
+                                    FontSize="12"
+                                    TextColor="Gray"
+                                    VerticalOptions="Center" />
+
+                            </Grid>
+
                         </DataTemplate>
+
                     </CollectionView.ItemTemplate>
+
                 </CollectionView>
 
-               
+            </VerticalStackLayout>
 
-            </VerticalStackLayout> 
-			<!-- Testing-->
-            
         </ScrollView>
+
     </Grid>
 
 </ContentPage>
