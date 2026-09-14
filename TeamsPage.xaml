@@ -5,7 +5,7 @@
              x:Class="TeamsMobileUI.TeamsPage"
              Title="Teams">
 
-    <Grid RowDefinitions="Auto,*">
+    <Grid RowDefinitions="Auto,*,Auto">
 
         <!-- Header -->
         <Grid
@@ -34,7 +34,6 @@
 
         </Grid>
 
-
         <!-- Teams Content -->
         <ScrollView Grid.Row="1">
 
@@ -42,7 +41,6 @@
                 Padding="20"
                 Spacing="15">
 
-                <!-- Page Heading -->
                 <Label
                     Text="Your teams"
                     FontSize="22"
@@ -52,7 +50,6 @@
                     Text="Teams and channels"
                     FontSize="14"
                     TextColor="Gray" />
-
 
                 <!-- Team List -->
                 <CollectionView
@@ -96,7 +93,6 @@
 
                                     </Border>
 
-
                                     <!-- Team Information -->
                                     <VerticalStackLayout
                                         Grid.Column="1"
@@ -114,7 +110,6 @@
                                             TextColor="Gray" />
 
                                     </VerticalStackLayout>
-
 
                                     <!-- Arrow -->
                                     <Label
@@ -137,6 +132,127 @@
             </VerticalStackLayout>
 
         </ScrollView>
+
+        <!-- Bottom Navigation -->
+        <Grid
+            Grid.Row="2"
+            Padding="10,8"
+            ColumnDefinitions="*,*,*,*,*">
+
+            <!-- Activity -->
+            <VerticalStackLayout
+                Grid.Column="0"
+                HorizontalOptions="Center">
+
+                <VerticalStackLayout.GestureRecognizers>
+                    <TapGestureRecognizer
+                        Tapped="OnActivityTapped" />
+                </VerticalStackLayout.GestureRecognizers>
+
+                <Label
+                    Text="⌂"
+                    FontSize="22"
+                    HorizontalTextAlignment="Center" />
+
+                <Label
+                    Text="Activity"
+                    FontSize="11"
+                    HorizontalTextAlignment="Center" />
+
+            </VerticalStackLayout>
+
+            <!-- Chat -->
+            <VerticalStackLayout
+                Grid.Column="1"
+                HorizontalOptions="Center">
+
+                <VerticalStackLayout.GestureRecognizers>
+                    <TapGestureRecognizer
+                        Tapped="OnChatTapped" />
+                </VerticalStackLayout.GestureRecognizers>
+
+                <Label
+                    Text="💬"
+                    FontSize="22"
+                    HorizontalTextAlignment="Center" />
+
+                <Label
+                    Text="Chat"
+                    FontSize="11"
+                    HorizontalTextAlignment="Center" />
+
+            </VerticalStackLayout>
+
+            <!-- Teams -->
+            <VerticalStackLayout
+                Grid.Column="2"
+                HorizontalOptions="Center">
+
+                <VerticalStackLayout.GestureRecognizers>
+                    <TapGestureRecognizer
+                        Tapped="OnTeamsTapped" />
+                </VerticalStackLayout.GestureRecognizers>
+
+                <Label
+                    Text="👥"
+                    FontSize="22"
+                    TextColor="#5B3A9D"
+                    HorizontalTextAlignment="Center" />
+
+                <Label
+                    Text="Teams"
+                    FontSize="11"
+                    FontAttributes="Bold"
+                    TextColor="#5B3A9D"
+                    HorizontalTextAlignment="Center" />
+
+            </VerticalStackLayout>
+
+            <!-- Calendar -->
+            <VerticalStackLayout
+                Grid.Column="3"
+                HorizontalOptions="Center">
+
+                <VerticalStackLayout.GestureRecognizers>
+                    <TapGestureRecognizer
+                        Tapped="OnCalendarTapped" />
+                </VerticalStackLayout.GestureRecognizers>
+
+                <Label
+                    Text="📅"
+                    FontSize="22"
+                    HorizontalTextAlignment="Center" />
+
+                <Label
+                    Text="Calendar"
+                    FontSize="11"
+                    HorizontalTextAlignment="Center" />
+
+            </VerticalStackLayout>
+
+            <!-- More -->
+            <VerticalStackLayout
+                Grid.Column="4"
+                HorizontalOptions="Center">
+
+                <VerticalStackLayout.GestureRecognizers>
+                    <TapGestureRecognizer
+                        Tapped="OnMoreTapped" />
+                </VerticalStackLayout.GestureRecognizers>
+
+                <Label
+                    Text="•••"
+                    FontSize="22"
+                    HorizontalTextAlignment="Center" />
+
+                <Label
+                    Text="More"
+                    FontSize="11"
+                    HorizontalTextAlignment="Center" />
+
+            </VerticalStackLayout>
+
+        </Grid>
 
     </Grid>
 

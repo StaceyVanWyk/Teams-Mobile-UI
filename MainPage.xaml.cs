@@ -1,13 +1,17 @@
 ﻿using TeamsMobileUI.Models;
+using Plugin.Maui.Audio;
 
 namespace TeamsMobileUI
 {
     public partial class MainPage : ContentPage
     {
+        private readonly IAudioManager _audioManager;
         public MainPage()
+
         {
             InitializeComponent();
             BindingContext = this;
+            _audioManager = AudioManager.Current;
         }
 
         public List<Chat> Chats { get; set; } = new()
@@ -136,7 +140,7 @@ namespace TeamsMobileUI
             }
         };
 
-        // Open individual chat
+        // Opens an individual chat
         private async void OnChatTapped(object? sender, TappedEventArgs e)
         {
             if (sender is Grid grid && grid.BindingContext is Chat chat)
@@ -150,28 +154,43 @@ namespace TeamsMobileUI
             }
         }
 
-        // Open Chat/Home page
+        // Opens Activity page
+        private async void OnActivityTapped(object? sender, TappedEventArgs e)
+        {
+            await Shell.Current.GoToAsync(nameof(ActivityPage));
+        }
+
+        // Opens Chat page
         private async void OnChatNavigationTapped(object? sender, TappedEventArgs e)
         {
             await Shell.Current.GoToAsync("//MainPage");
         }
 
-        // Open Teams page
+        // Opens Teams page
         private async void OnTeamsTapped(object? sender, TappedEventArgs e)
         {
+            await PlayTapSound();
             await Shell.Current.GoToAsync(nameof(TeamsPage));
         }
 
-        // Open Calendar page
+        // Opens Calendar page
         private async void OnCalendarTapped(object? sender, TappedEventArgs e)
         {
             await Shell.Current.GoToAsync(nameof(CalendarPage));
         }
 
-        // Open More page
+        // Opens More page
         private async void OnMoreTapped(object? sender, TappedEventArgs e)
         {
             await Shell.Current.GoToAsync(nameof(MorePage));
         }
+
+        private async Task PlayTapSound()
+{
+    var player = _audioManager.CreatePlayer(
+        await FileSystem.OpenAppPackageFileAsync("tap.wav"));
+
+    player.Play();
+}
     }
 }

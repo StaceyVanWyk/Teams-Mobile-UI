@@ -153,6 +153,11 @@
                 Grid.Column="0"
                 HorizontalOptions="Center">
 
+                <VerticalStackLayout.GestureRecognizers>
+                    <TapGestureRecognizer
+                        Tapped="OnActivityTapped" />
+                </VerticalStackLayout.GestureRecognizers>
+
                 <Label
                     Text="⌂"
                     FontSize="22"
@@ -169,6 +174,11 @@
             <VerticalStackLayout
                 Grid.Column="1"
                 HorizontalOptions="Center">
+
+                <VerticalStackLayout.GestureRecognizers>
+                    <TapGestureRecognizer
+                        Tapped="OnChatNavigationTapped" />
+                </VerticalStackLayout.GestureRecognizers>
 
                 <Label
                     Text="💬"

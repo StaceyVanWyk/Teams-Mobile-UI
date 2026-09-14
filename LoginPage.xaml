@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TeamsMobileUI.LoginPage"
+             Title="Sign in">
+
+    <ScrollView>
+
+        <VerticalStackLayout Padding="30,60"
+                             Spacing="20"
+                             VerticalOptions="Center">
+
+            <!-- Teams Logo -->
+            <Label Text="👥"
+                   FontSize="70"
+                   HorizontalTextAlignment="Center" />
+
+            <Label Text="Microsoft Teams"
+                   FontSize="30"
+                   FontAttributes="Bold"
+                   HorizontalTextAlignment="Center" />
+
+            <Label Text="Sign in to continue"
+                   FontSize="16"
+                   TextColor="Gray"
+                   HorizontalTextAlignment="Center"
+                   Margin="0,0,0,20" />
+
+
+            <!-- Email -->
+            <Label Text="Email"
+                   FontSize="15"
+                   FontAttributes="Bold" />
+
+            <Entry x:Name="EmailEntry"
+                   Placeholder="Enter your email"
+                   Keyboard="Email"
+                   HeightRequest="50" />
+
+
+            <!-- Password -->
+            <Label Text="Password"
+                   FontSize="15"
+                   FontAttributes="Bold"
+                   Margin="0,10,0,0" />
+
+            <Entry x:Name="PasswordEntry"
+                   Placeholder="Enter your password"
+                   IsPassword="True"
+                   HeightRequest="50" />
+
+
+            <!-- Sign In -->
+            <Button Text="Sign in"
+                    Clicked="OnSignInClicked"
+                    HeightRequest="50"
+                    CornerRadius="10"
+                    FontSize="16"
+                    Margin="0,15,0,0" />
+
+
+            <!-- Forgot Password -->
+            <Label Text="Forgot your password?"
+                   FontSize="14"
+                   TextColor="#5B3A9D"
+                   HorizontalTextAlignment="Center"
+                   Margin="0,5,0,0" />
+
+
+            <!-- Demo Notice -->
+            <Label Text="Demo login — no real Microsoft account is required."
+                   FontSize="12"
+                   TextColor="Gray"
+                   HorizontalTextAlignment="Center"
+                   Margin="0,20,0,0" />
+
+        </VerticalStackLayout>
+
+    </ScrollView>
+
+</ContentPage>

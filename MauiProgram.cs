@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
+using Plugin.Maui.Audio;
 
 namespace TeamsMobileUI
 {
@@ -7,6 +8,7 @@ namespace TeamsMobileUI
         public static MauiApp CreateMauiApp()
         {
             var builder = MauiApp.CreateBuilder();
+
             builder
                 .UseMauiApp<App>()
                 .ConfigureFonts(fonts =>
@@ -16,8 +18,10 @@ namespace TeamsMobileUI
                 });
 
 #if DEBUG
-    		builder.Logging.AddDebug();
+            builder.Logging.AddDebug();
 #endif
+
+            builder.AddAudio();
 
             return builder.Build();
         }
