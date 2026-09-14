@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TeamsMobileUI.MorePage"
+             Title="More">
+
+    <Grid RowDefinitions="Auto,*">
+
+        <!-- Header -->
+        <Grid
+            Grid.Row="0"
+            Padding="20"
+            ColumnDefinitions="Auto,*,Auto">
+
+            <Label
+                Text="☰"
+                FontSize="28"
+                VerticalOptions="Center" />
+
+            <Label
+                Grid.Column="1"
+                Text="More"
+                FontSize="24"
+                FontAttributes="Bold"
+                HorizontalOptions="Center"
+                VerticalOptions="Center" />
+
+            <Label
+                Grid.Column="2"
+                Text="⚙"
+                FontSize="24"
+                VerticalOptions="Center" />
+
+        </Grid>
+
+        <!-- More Content -->
+        <ScrollView Grid.Row="1">
+
+            <VerticalStackLayout
+                Padding="20"
+                Spacing="12">
+
+                <!-- Profile -->
+                <Border
+                    Padding="15"
+                    Margin="0,0,0,10"
+                    BackgroundColor="#F5F5F5"
+                    StrokeThickness="0">
+
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="12" />
+                    </Border.StrokeShape>
+
+                    <Grid
+                        ColumnDefinitions="60,*,Auto">
+
+                        <Image
+                            Source="sarah.jpg"
+                            HeightRequest="50"
+                            WidthRequest="50"
+                            Aspect="AspectFill" />
+
+                        <VerticalStackLayout
+                            Grid.Column="1"
+                            VerticalOptions="Center">
+
+                            <Label
+                                Text="Stacey"
+                                FontSize="17"
+                                FontAttributes="Bold" />
+
+                            <Label
+                                Text="View profile"
+                                FontSize="13"
+                                TextColor="Gray" />
+
+                        </VerticalStackLayout>
+
+                        <Label
+                            Grid.Column="2"
+                            Text="›"
+                            FontSize="28"
+                            TextColor="Gray"
+                            VerticalOptions="Center" />
+
+                    </Grid>
+
+                </Border>
+
+                <!-- Menu Items -->
+                <Label
+                    Text="Options"
+                    FontSize="20"
+                    FontAttributes="Bold"
+                    Margin="0,5,0,5" />
+
+                <Border
+                    Padding="15"
+                    BackgroundColor="#F5F5F5"
+                    StrokeThickness="0">
+
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="12" />
+                    </Border.StrokeShape>
+
+                    <Grid ColumnDefinitions="45,*,Auto">
+
+                        <Label
+                            Text="🔔"
+                            FontSize="22"
+                            VerticalOptions="Center" />
+
+                        <Label
+                            Grid.Column="1"
+                            Text="Notifications"
+                            FontSize="16"
+                            VerticalOptions="Center" />
+
+                        <Label
+                            Grid.Column="2"
+                            Text="›"
+                            FontSize="28"
+                            TextColor="Gray"
+                            VerticalOptions="Center" />
+
+                    </Grid>
+
+                </Border>
+
+                <Border
+                    Padding="15"
+                    BackgroundColor="#F5F5F5"
+                    StrokeThickness="0">
+
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="12" />
+                    </Border.StrokeShape>
+
+                    <Grid ColumnDefinitions="45,*,Auto">
+
+                        <Label
+                            Text="📁"
+                            FontSize="22"
+                            VerticalOptions="Center" />
+
+                        <Label
+                            Grid.Column="1"
+                            Text="Files"
+                            FontSize="16"
+                            VerticalOptions="Center" />
+
+                        <Label
+                            Grid.Column="2"
+                            Text="›"
+                            FontSize="28"
+                            TextColor="Gray"
+                            VerticalOptions="Center" />
+
+                    </Grid>
+
+                </Border>
+
+                <Border
+                    Padding="15"
+                    BackgroundColor="#F5F5F5"
+                    StrokeThickness="0">
+
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="12" />
+                    </Border.StrokeShape>
+
+                    <Grid ColumnDefinitions="45,*,Auto">
+
+                        <Label
+                            Text="⚙"
+                            FontSize="22"
+                            VerticalOptions="Center" />
+
+                        <Label
+                            Grid.Column="1"
+                            Text="Settings"
+                            FontSize="16"
+                            VerticalOptions="Center" />
+
+                        <Label
+                            Grid.Column="2"
+                            Text="›"
+                            FontSize="28"
+                            TextColor="Gray"
+                            VerticalOptions="Center" />
+
+                    </Grid>
+
+                </Border>
+
+                <Border
+                    Padding="15"
+                    BackgroundColor="#F5F5F5"
+                    StrokeThickness="0">
+
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="12" />
+                    </Border.StrokeShape>
+
+                    <Grid ColumnDefinitions="45,*,Auto">
+
+                        <Label
+                            Text="❓"
+                            FontSize="22"
+                            VerticalOptions="Center" />
+
+                        <Label
+                            Grid.Column="1"
+                            Text="Help and feedback"
+                            FontSize="16"
+                            VerticalOptions="Center" />
+
+                        <Label
+                            Grid.Column="2"
+                            Text="›"
+                            FontSize="28"
+                            TextColor="Gray"
+                            VerticalOptions="Center" />
+
+                    </Grid>
+
+                </Border>
+
+                <!-- App Information -->
+                <Label
+                    Text="About"
+                    FontSize="20"
+                    FontAttributes="Bold"
+                    Margin="0,15,0,5" />
+
+                <Label
+                    Text="Teams Mobile UI"
+                    FontSize="14"
+                    TextColor="Gray" />
+
+                <Label
+                    Text="A mobile interface inspired by Microsoft Teams."
+                    FontSize="13"
+                    TextColor="Gray" />
+
+            </VerticalStackLayout>
+
+        </ScrollView>
+
+    </Grid>
+
+</ContentPage>

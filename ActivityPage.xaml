@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TeamsMobileUI.ActivityPage"
+             Title="Activity">
+
+    <Grid RowDefinitions="Auto,*">
+
+        <!-- Header -->
+        <Grid
+            Grid.Row="0"
+            Padding="20"
+            ColumnDefinitions="Auto,*,Auto">
+
+            <Label
+                Text="☰"
+                FontSize="28"
+                VerticalOptions="Center" />
+
+            <Label
+                Grid.Column="1"
+                Text="Activity"
+                FontSize="24"
+                FontAttributes="Bold"
+                HorizontalOptions="Center"
+                VerticalOptions="Center" />
+
+            <Label
+                Grid.Column="2"
+                Text="•••"
+                FontSize="22"
+                VerticalOptions="Center" />
+
+        </Grid>
+
+        <!-- Activity List -->
+        <ScrollView Grid.Row="1">
+
+            <VerticalStackLayout
+                Padding="20"
+                Spacing="15">
+
+                <Label
+                    Text="Recent activity"
+                    FontSize="20"
+                    FontAttributes="Bold" />
+
+                <!-- Activity Item -->
+                <Border
+                    Padding="15"
+                    BackgroundColor="#F5F5F5"
+                    StrokeThickness="0">
+
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="12" />
+                    </Border.StrokeShape>
+
+                    <Grid ColumnDefinitions="55,*,Auto">
+
+                        <Image
+                            Source="sarah.jpg"
+                            HeightRequest="45"
+                            WidthRequest="45"
+                            Aspect="AspectFill" />
+
+                        <VerticalStackLayout
+                            Grid.Column="1"
+                            VerticalOptions="Center">
+
+                            <Label
+                                Text="Stacey mentioned you"
+                                FontSize="16"
+                                FontAttributes="Bold" />
+
+                            <Label
+                                Text="In Development Team"
+                                FontSize="13"
+                                TextColor="Gray" />
+
+                        </VerticalStackLayout>
+
+                        <Label
+                            Grid.Column="2"
+                            Text="10:15"
+                            FontSize="12"
+                            TextColor="Gray"
+                            VerticalOptions="Center" />
+
+                    </Grid>
+
+                </Border>
+
+                <!-- Activity Item -->
+                <Border
+                    Padding="15"
+                    BackgroundColor="#F5F5F5"
+                    StrokeThickness="0">
+
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="12" />
+                    </Border.StrokeShape>
+
+                    <Grid ColumnDefinitions="55,*,Auto">
+
+                        <Image
+                            Source="john.jpg"
+                            HeightRequest="45"
+                            WidthRequest="45"
+                            Aspect="AspectFill" />
+
+                        <VerticalStackLayout
+                            Grid.Column="1"
+                            VerticalOptions="Center">
+
+                            <Label
+                                Text="John sent a message"
+                                FontSize="16"
+                                FontAttributes="Bold" />
+
+                            <Label
+                                Text="I'll send the document"
+                                FontSize="13"
+                                TextColor="Gray" />
+
+                        </VerticalStackLayout>
+
+                        <Label
+                            Grid.Column="2"
+                            Text="08:00"
+                            FontSize="12"
+                            TextColor="Gray"
+                            VerticalOptions="Center" />
+
+                    </Grid>
+
+                </Border>
+
+                <!-- Activity Item -->
+                <Border
+                    Padding="15"
+                    BackgroundColor="#F5F5F5"
+                    StrokeThickness="0">
+
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="12" />
+                    </Border.StrokeShape>
+
+                    <Grid ColumnDefinitions="55,*,Auto">
+
+                        <Image
+                            Source="lisa.jpg"
+                            HeightRequest="45"
+                            WidthRequest="45"
+                            Aspect="AspectFill" />
+
+                        <VerticalStackLayout
+                            Grid.Column="1"
+                            VerticalOptions="Center">
+
+                            <Label
+                                Text="Lisa reacted to your message"
+                                FontSize="16"
+                                FontAttributes="Bold" />
+
+                            <Label
+                                Text="Thanks!"
+                                FontSize="13"
+                                TextColor="Gray" />
+
+                        </VerticalStackLayout>
+
+                        <Label
+                            Grid.Column="2"
+                            Text="Yesterday"
+                            FontSize="12"
+                            TextColor="Gray"
+                            VerticalOptions="Center" />
+
+                    </Grid>
+
+                </Border>
+
+            </VerticalStackLayout>
+
+        </ScrollView>
+
+    </Grid>
+
+</ContentPage>

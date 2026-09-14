@@ -136,7 +136,8 @@ namespace TeamsMobileUI
             }
         };
 
-        private async void OnChatTapped(object sender, EventArgs e)
+        // Open individual chat
+        private async void OnChatTapped(object? sender, TappedEventArgs e)
         {
             if (sender is Grid grid && grid.BindingContext is Chat chat)
             {
@@ -149,9 +150,28 @@ namespace TeamsMobileUI
             }
         }
 
-        private async void OnTeamsTapped(object sender, EventArgs e)
+        // Open Chat/Home page
+        private async void OnChatNavigationTapped(object? sender, TappedEventArgs e)
+        {
+            await Shell.Current.GoToAsync("//MainPage");
+        }
+
+        // Open Teams page
+        private async void OnTeamsTapped(object? sender, TappedEventArgs e)
         {
             await Shell.Current.GoToAsync(nameof(TeamsPage));
+        }
+
+        // Open Calendar page
+        private async void OnCalendarTapped(object? sender, TappedEventArgs e)
+        {
+            await Shell.Current.GoToAsync(nameof(CalendarPage));
+        }
+
+        // Open More page
+        private async void OnMoreTapped(object? sender, TappedEventArgs e)
+        {
+            await Shell.Current.GoToAsync(nameof(MorePage));
         }
     }
 }
