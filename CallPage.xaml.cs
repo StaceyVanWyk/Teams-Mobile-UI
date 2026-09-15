@@ -76,6 +76,34 @@ public partial class CallPage : ContentPage
             ? "Speaker off"
             : "Speaker";
     }
+    private void OnShareScreenClicked(object? sender, EventArgs e)
+    {
+        bool isSharing = ScreenShareView.IsVisible;
+
+        ParticipantsGrid.IsVisible = isSharing;
+        ScreenShareView.IsVisible = !isSharing;
+
+        ShareLabel.Text = isSharing
+            ? "Share"
+            : "Stop sharing";
+    }
+
+    private void OnParticipantsClicked(object? sender, EventArgs e)
+    {
+        ParticipantsPanel.IsVisible = !ParticipantsPanel.IsVisible;
+    }
+
+    private void OnMeetingChatClicked(object? sender, EventArgs e)
+    {
+        MeetingChatPanel.IsVisible = !MeetingChatPanel.IsVisible;
+
+        if (MeetingChatPanel.IsVisible)
+        {
+            ParticipantsPanel.IsVisible = false;
+            ScreenShareView.IsVisible = false;
+            ParticipantsGrid.IsVisible = true;
+        }
+    }
 
     private async void OnEndCallClicked(object? sender, EventArgs e)
     {
