@@ -5,124 +5,388 @@
              x:Class="TeamsMobileUI.CallPage"
              NavigationPage.HasNavigationBar="False">
 
-    <Grid RowDefinitions="*,Auto"
-          BackgroundColor="#1F1F1F">
+    <Grid
+        RowDefinitions="Auto,*,Auto"
+        BackgroundColor="#1F1F1F">
 
-        <!-- Call Information -->
-        <VerticalStackLayout Grid.Row="0"
-                             VerticalOptions="Center"
-                             HorizontalOptions="Center"
-                             Spacing="15">
+        <!-- ========================= -->
+        <!-- Call Header -->
+        <!-- ========================= -->
 
-            <Image Source="sarah.jpg"
-                   HeightRequest="130"
-                   WidthRequest="130"
-                   Aspect="AspectFill" />
+        <Grid
+            Grid.Row="0"
+            Padding="20,15"
+            ColumnDefinitions="*,Auto">
 
-            <Label Text="Stacey"
-                   FontSize="28"
-                   FontAttributes="Bold"
-                   TextColor="White"
-                   HorizontalTextAlignment="Center" />
+            <VerticalStackLayout>
 
-            <Label x:Name="CallStatusLabel"
-                   Text="Calling..."
-                   FontSize="16"
-                   TextColor="LightGray"
-                   HorizontalTextAlignment="Center" />
+                <Label
+                    Text="Group call"
+                    FontSize="20"
+                    FontAttributes="Bold"
+                    TextColor="White" />
 
-            <Label x:Name="CallTimerLabel"
-                   Text="00:00"
-                   FontSize="15"
-                   TextColor="LightGray"
-                   HorizontalTextAlignment="Center" />
+                <HorizontalStackLayout Spacing="8">
 
-        </VerticalStackLayout>
+                    <Label
+                        x:Name="CallStatusLabel"
+                        Text="Calling..."
+                        FontSize="13"
+                        TextColor="LightGray" />
+
+                    <Label
+                        Text="•"
+                        FontSize="13"
+                        TextColor="LightGray" />
+
+                    <Label
+                        x:Name="CallTimerLabel"
+                        Text="00:00"
+                        FontSize="13"
+                        TextColor="LightGray" />
+
+                </HorizontalStackLayout>
+
+            </VerticalStackLayout>
+
+            <!-- More -->
+            <Label
+                Grid.Column="1"
+                Text="•••"
+                FontSize="22"
+                TextColor="White"
+                VerticalOptions="Center" />
+
+        </Grid>
 
 
+        <!-- ========================= -->
+        <!-- Participants -->
+        <!-- ========================= -->
+
+        <Grid
+            Grid.Row="1"
+            Padding="12,5"
+            RowDefinitions="*,*"
+            ColumnDefinitions="*,*"
+            RowSpacing="10"
+            ColumnSpacing="10">
+
+            <!-- Stacey -->
+            <Border
+                Grid.Row="0"
+                Grid.Column="0"
+                BackgroundColor="#303030"
+                StrokeThickness="0">
+
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="12" />
+                </Border.StrokeShape>
+
+                <Grid>
+
+                    <Image
+                        Source="sarah.jpg"
+                        Aspect="AspectFill" />
+
+                    <Border
+                        BackgroundColor="#00000080"
+                        StrokeThickness="0"
+                        VerticalOptions="End"
+                        Padding="8">
+
+                        <Label
+                            Text="Stacey"
+                            FontSize="14"
+                            TextColor="White"
+                            FontAttributes="Bold" />
+
+                    </Border>
+
+                </Grid>
+
+            </Border>
+
+
+            <!-- John -->
+            <Border
+                Grid.Row="0"
+                Grid.Column="1"
+                BackgroundColor="#303030"
+                StrokeThickness="0">
+
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="12" />
+                </Border.StrokeShape>
+
+                <Grid>
+
+                    <Image
+                        Source="john.jpg"
+                        Aspect="AspectFill" />
+
+                    <Border
+                        BackgroundColor="#00000080"
+                        StrokeThickness="0"
+                        VerticalOptions="End"
+                        Padding="8">
+
+                        <Label
+                            Text="John"
+                            FontSize="14"
+                            TextColor="White"
+                            FontAttributes="Bold" />
+
+                    </Border>
+
+                </Grid>
+
+            </Border>
+
+
+            <!-- Lisa -->
+            <Border
+                Grid.Row="1"
+                Grid.Column="0"
+                BackgroundColor="#303030"
+                StrokeThickness="0">
+
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="12" />
+                </Border.StrokeShape>
+
+                <Grid>
+
+                    <Image
+                        Source="lisa.jpg"
+                        Aspect="AspectFill" />
+
+                    <Border
+                        BackgroundColor="#00000080"
+                        StrokeThickness="0"
+                        VerticalOptions="End"
+                        Padding="8">
+
+                        <Label
+                            Text="Lisa"
+                            FontSize="14"
+                            TextColor="White"
+                            FontAttributes="Bold" />
+
+                    </Border>
+
+                </Grid>
+
+            </Border>
+
+
+            <!-- Michael -->
+            <Border
+                Grid.Row="1"
+                Grid.Column="1"
+                BackgroundColor="#303030"
+                StrokeThickness="0">
+
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="12" />
+                </Border.StrokeShape>
+
+                <Grid>
+
+                    <Image
+                        Source="michael.jpg"
+                        Aspect="AspectFill" />
+
+                    <Border
+                        BackgroundColor="#00000080"
+                        StrokeThickness="0"
+                        VerticalOptions="End"
+                        Padding="8">
+
+                        <Label
+                            Text="Michael"
+                            FontSize="14"
+                            TextColor="White"
+                            FontAttributes="Bold" />
+
+                    </Border>
+
+                </Grid>
+
+            </Border>
+
+        </Grid>
+
+
+        <!-- ========================= -->
         <!-- Call Controls -->
-        <Grid Grid.Row="1"
-              Padding="25,20,25,35"
-              ColumnDefinitions="*,*,*,*"
-              ColumnSpacing="15">
+        <!-- ========================= -->
+
+        <Grid
+            Grid.Row="2"
+            Padding="12,10,12,20"
+            ColumnDefinitions="*,*,*,*,*,*,*"
+            ColumnSpacing="5">
 
             <!-- Mute -->
-            <VerticalStackLayout Grid.Column="0"
-                                 HorizontalOptions="Center">
+            <VerticalStackLayout
+                Grid.Column="0"
+                HorizontalOptions="Center">
 
-                <Button Text="🎤"
-                        FontSize="22"
-                        WidthRequest="55"
-                        HeightRequest="55"
-                        CornerRadius="28"
-                        Clicked="OnMuteClicked" />
+                <Button
+                    Text="🎤"
+                    FontSize="20"
+                    WidthRequest="48"
+                    HeightRequest="48"
+                    CornerRadius="24"
+                    Padding="0"
+                    Clicked="OnMuteClicked" />
 
-                <Label x:Name="MuteLabel"
-                       Text="Mute"
-                       TextColor="White"
-                       FontSize="12"
-                       HorizontalTextAlignment="Center" />
+                <Label
+                    x:Name="MuteLabel"
+                    Text="Mute"
+                    TextColor="White"
+                    FontSize="10"
+                    HorizontalTextAlignment="Center" />
 
             </VerticalStackLayout>
 
 
             <!-- Camera -->
-            <VerticalStackLayout Grid.Column="1"
-                                 HorizontalOptions="Center">
+            <VerticalStackLayout
+                Grid.Column="1"
+                HorizontalOptions="Center">
 
-                <Button Text="📹"
-                        FontSize="22"
-                        WidthRequest="55"
-                        HeightRequest="55"
-                        CornerRadius="28"
-                        Clicked="OnCameraClicked" />
+                <Button
+                    Text="📹"
+                    FontSize="20"
+                    WidthRequest="48"
+                    HeightRequest="48"
+                    CornerRadius="24"
+                    Padding="0"
+                    Clicked="OnCameraClicked" />
 
-                <Label x:Name="CameraLabel"
-                       Text="Camera"
-                       TextColor="White"
-                       FontSize="12"
-                       HorizontalTextAlignment="Center" />
+                <Label
+                    x:Name="CameraLabel"
+                    Text="Camera"
+                    TextColor="White"
+                    FontSize="10"
+                    HorizontalTextAlignment="Center" />
+
+            </VerticalStackLayout>
+
+
+            <!-- Share Screen -->
+            <VerticalStackLayout
+                Grid.Column="2"
+                HorizontalOptions="Center">
+
+                <Button
+                    Text="🖥️"
+                    FontSize="19"
+                    WidthRequest="48"
+                    HeightRequest="48"
+                    CornerRadius="24"
+                    Padding="0" />
+
+                <Label
+                    Text="Share"
+                    TextColor="White"
+                    FontSize="10"
+                    HorizontalTextAlignment="Center" />
+
+            </VerticalStackLayout>
+
+
+            <!-- Participants -->
+            <VerticalStackLayout
+                Grid.Column="3"
+                HorizontalOptions="Center">
+
+                <Button
+                    Text="👥"
+                    FontSize="19"
+                    WidthRequest="48"
+                    HeightRequest="48"
+                    CornerRadius="24"
+                    Padding="0" />
+
+                <Label
+                    Text="People"
+                    TextColor="White"
+                    FontSize="10"
+                    HorizontalTextAlignment="Center" />
+
+            </VerticalStackLayout>
+
+
+            <!-- Chat -->
+            <VerticalStackLayout
+                Grid.Column="4"
+                HorizontalOptions="Center">
+
+                <Button
+                    Text="💬"
+                    FontSize="19"
+                    WidthRequest="48"
+                    HeightRequest="48"
+                    CornerRadius="24"
+                    Padding="0" />
+
+                <Label
+                    Text="Chat"
+                    TextColor="White"
+                    FontSize="10"
+                    HorizontalTextAlignment="Center" />
 
             </VerticalStackLayout>
 
 
             <!-- Speaker -->
-            <VerticalStackLayout Grid.Column="2"
-                                 HorizontalOptions="Center">
+            <VerticalStackLayout
+                Grid.Column="5"
+                HorizontalOptions="Center">
 
-                <Button Text="🔊"
-                        FontSize="22"
-                        WidthRequest="55"
-                        HeightRequest="55"
-                        CornerRadius="28"
-                        Clicked="OnSpeakerClicked" />
+                <Button
+                    Text="🔊"
+                    FontSize="19"
+                    WidthRequest="48"
+                    HeightRequest="48"
+                    CornerRadius="24"
+                    Padding="0"
+                    Clicked="OnSpeakerClicked" />
 
-                <Label x:Name="SpeakerLabel"
-                       Text="Speaker"
-                       TextColor="White"
-                       FontSize="12"
-                       HorizontalTextAlignment="Center" />
+                <Label
+                    x:Name="SpeakerLabel"
+                    Text="Speaker"
+                    TextColor="White"
+                    FontSize="10"
+                    HorizontalTextAlignment="Center" />
 
             </VerticalStackLayout>
 
 
             <!-- End Call -->
-            <VerticalStackLayout Grid.Column="3"
-                                 HorizontalOptions="Center">
+            <VerticalStackLayout
+                Grid.Column="6"
+                HorizontalOptions="Center">
 
-                <Button Text="📞"
-                        FontSize="22"
-                        WidthRequest="55"
-                        HeightRequest="55"
-                        CornerRadius="28"
-                        BackgroundColor="#D13438"
-                        TextColor="White"
-                        Clicked="OnEndCallClicked" />
+                <Button
+                    Text="📞"
+                    FontSize="20"
+                    WidthRequest="48"
+                    HeightRequest="48"
+                    CornerRadius="24"
+                    BackgroundColor="#D13438"
+                    TextColor="White"
+                    Padding="0"
+                    Clicked="OnEndCallClicked" />
 
-                <Label Text="End"
-                       TextColor="White"
-                       FontSize="12"
-                       HorizontalTextAlignment="Center" />
+                <Label
+                    Text="End"
+                    TextColor="White"
+                    FontSize="10"
+                    HorizontalTextAlignment="Center" />
 
             </VerticalStackLayout>
 
